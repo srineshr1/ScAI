@@ -1,0 +1,203 @@
+:root {
+  color-scheme: dark;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: transparent !important;
+  overflow: hidden;
+  user-select: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: rgba(15, 15, 20, 0.78);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  color: #e8e8ea;
+  overflow: hidden;
+}
+
+.dragbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  height: 32px;
+  -webkit-app-region: drag;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.iconbtn {
+  -webkit-app-region: no-drag;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  line-height: 1;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconbtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.response {
+  flex: 1;
+  padding: 16px 20px;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.55;
+  user-select: text;
+}
+
+.response pre {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 10px 12px;
+  overflow-x: auto;
+  font-size: 12.5px;
+}
+
+.response code {
+  font-family: 'JetBrains Mono', Consolas, Menlo, monospace;
+}
+
+.response :not(pre) > code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 12.5px;
+}
+
+.response h1, .response h2, .response h3 {
+  margin: 0.6em 0 0.3em;
+  font-weight: 600;
+}
+
+.response ul, .response ol {
+  padding-left: 1.4em;
+  margin: 0.4em 0;
+}
+
+.response p {
+  margin: 0.4em 0;
+}
+
+.response strong {
+  color: #fff;
+}
+
+.hint {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 13px;
+}
+
+.error {
+  color: #ff9a9a;
+  font-size: 13px;
+  background: rgba(255, 80, 80, 0.1);
+  border: 1px solid rgba(255, 80, 80, 0.2);
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.25; transform: scale(0.85); }
+  50%      { opacity: 1;    transform: scale(1.15); }
+}
+
+.inputrow {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.inputrow input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  -webkit-app-region: no-drag;
+  font-family: inherit;
+}
+
+.inputrow input:focus {
+  border-color: rgba(120, 150, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.inputrow input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.clearbtn {
+  -webkit-app-region: no-drag;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0 14px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.clearbtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.clearbtn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
